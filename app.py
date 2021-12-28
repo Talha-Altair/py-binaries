@@ -1,16 +1,16 @@
 #!python3
 
-from flask import Flask, render_template, request, redirect, url_for, flash
-import pandas as pd
+from flask import Flask, render_template, request, redirect, url_for, flash, jsonify
+from data import get_data
 
 app = Flask(__name__)
 
 @app.route('/')
 def index():
 
-    data = pd.read_csv('data.csv').to_json()
+    data = get_data()
 
-    return render_template('index.html', data = data)
+    return jsonify(data)
 
 if __name__ == '__main__':
 
