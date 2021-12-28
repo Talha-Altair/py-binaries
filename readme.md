@@ -1,3 +1,4 @@
 ```
-pyinstaller --specpath /opt/bk/spec --distpath /opt/bk/dist --workpath /opt/bk/build testscript.py
+export BUILD_DIR=build
+pyinstaller --specpath $BUILD_DIR/spec --distpath $BUILD_DIR/dist --workpath $BUILD_DIR/build app.py
 ```
